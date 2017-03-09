@@ -2,9 +2,13 @@ var express = require('express');
 var useragent = require('express-useragent');
 
 var app = express();
-var port = process.env.port || 8080;
+var port = Process.env.port || 8080;
 
 app.use(useragent.express());
+
+app.get('/', function(req, res) {
+    res.send('<a href="https://cmseaton-header-parser.herokuapp.com/api/whoami">API</a>');
+});
 
 app.get('/api/whoami', function (req, res) {
 
